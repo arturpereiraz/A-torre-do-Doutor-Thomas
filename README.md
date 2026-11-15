@@ -1,417 +1,173 @@
-# A-torre-do-Doutor-Thomas
-Projeto para disciplina de Programação
-# RPG: A Torre do Dr. Thomas
+# 🎮 A Torre do Dr. Thomas
 
 ## 1. Identificação
 
-- **Aluno:** [Seu nome completo]
+- **Aluno:** Artur Pereira Lino
 - **Matrícula:** [Sua matrícula]
-- **Linguagem de programação:** C
-- **Tipo de jogo:** RPG de aventura e combate por turnos.
-
----
+- **Linguagem:** C
+- **Gênero:** RPG de aventura e combate.
 
 ## 2. História do jogo
 
-O mundo está ameaçado por uma experiência científica que saiu do controle.
+O Dr. Thomas desenvolveu um soro capaz de aumentar as capacidades humanas. Porém, seu experimento saiu do controle e acabou criando diversos monstros.
 
-O Dr. Thomas, um cientista responsável por pesquisas envolvendo o desenvolvimento de um soro capaz de potencializar as capacidades humanas, acabou criando algo muito mais perigoso do que imaginava. O experimento provocou mutações e deu origem a diversas criaturas monstruosas.
+O jogador recebe a missão de invadir a torre, enfrentar as criaturas, derrotar o cientista e salvar a humanidade.
 
-Com a humanidade em perigo, o jogador recebe a missão de invadir a torre do Dr. Thomas, enfrentar as criaturas que surgiram dos experimentos, derrotar o cientista e conseguir o antídoto necessário para salvar a população.
-
-A aventura acontece em três fases, nas quais o jogador precisa percorrer um tabuleiro, enfrentar inimigos, encontrar recursos e sobreviver até chegar ao confronto final.
-
-**Objetivo principal:** derrotar o Dr. Thomas e impedir que suas experiências continuem ameaçando a humanidade.
-
----
+O jogo possui três fases e um chefe final.
 
 ## 3. Personagens
 
-O jogador pode escolher entre três personagens, cada um com atributos e habilidades especiais diferentes.
+O jogador pode escolher entre três personagens, cada um com características e habilidades especiais.
 
-### 3.1 Soldado – Patrick
+### Patrick – Soldado
 
-Especialista em combate direto, possui a maior quantidade de vida inicial e boa força de ataque.
+Especialista em combate direto e força física.
 
-- **Vida máxima:** 120
+- **Vida:** 120
 - **Força:** 15
 - **Defesa:** 10
 - **Agilidade:** 8
 - **Inteligência:** 6
-- **Equipamento:** Fuzil
-- **Habilidade especial:** Rajada Pesada – adiciona 10 pontos ao dano do ataque.
+- **Equipamento:** Fuzil.
+- **Habilidade especial:** Rajada Pesada, adiciona 10 pontos de dano ao ataque.
 
-### 3.2 General – Red Jhon
+### Red Jhon – General
 
-Personagem estratégico, possui alta defesa e inteligência. Sua habilidade especial permite recuperar pontos de vida durante os combates.
+Personagem estratégico, com alta defesa e inteligência.
 
-- **Vida máxima:** 100
+- **Vida:** 100
 - **Força:** 9
 - **Defesa:** 13
 - **Agilidade:** 6
 - **Inteligência:** 14
-- **Equipamento:** Pistola Tática
-- **Habilidade especial:** Ordem de Recuo – recupera 30 pontos de vida, respeitando o limite máximo.
+- **Equipamento:** Pistola Tática.
+- **Habilidade especial:** Ordem de Recuo, recupera 30 pontos de vida.
 
-### 3.3 Agente – Lisbon
+### Lisbon – Agente
 
-Personagem ágil, equilibrado e especializado em ataques rápidos e eficientes.
+Personagem ágil, especializado em ataques rápidos.
 
-- **Vida máxima:** 110
+- **Vida:** 110
 - **Força:** 12
 - **Defesa:** 11
 - **Agilidade:** 14
 - **Inteligência:** 12
-- **Equipamento:** Pistola Silenciada
-- **Habilidade especial:** Golpe Corpo a Corpo – realiza um ataque com dano dobrado.
-
-**Observação:** os equipamentos são apresentados na descrição dos personagens, mas não possuem mecânicas próprias implementadas no combate.
-
----
+- **Equipamento:** Pistola Silenciada.
+- **Habilidade especial:** Golpe Corpo a Corpo, causa dano dobrado.
 
 ## 4. Monstros e fases
 
-O jogo possui três fases, com diferentes criaturas e níveis de dificuldade.
+### Fase 1 – Entrada da torre
 
-### 4.1 Fase 1 – Entrada da torre
+**Missão:** chegar à torre do Dr. Thomas.
 
-**Missão:** chegar à torre do Dr. Thomas, enfrentando as primeiras criaturas resultantes do experimento.
+- **Zumbi Mutante:** humano infectado pelo soro.
+- **Cão Infectado:** cão de guarda que sofreu mutações.
+- **Guarda Mutante:** segurança da torre transformado pelo experimento.
 
-Monstros disponíveis:
+### Fase 2 – Interior da torre
 
-| Monstro | Vida | Ataque | Defesa |
-|---|---:|---:|---:|
-| Zumbi Mutante | 20 | 6 | 3 |
-| Cão Infectado | 25 | 7 | 2 |
-| Guarda Mutante | 30 | 8 | 4 |
+**Missão:** avançar pelo interior da torre.
 
-**Características:**
-- Zumbi Mutante: humano infectado pelo soro.
-- Cão Infectado: antigo cão de guarda que sofreu mutações.
-- Guarda Mutante: segurança da torre transformado pelo experimento.
+- **Cientista Mutante:** assistente do Dr. Thomas.
+- **Aranha Experimental:** aranha gigante de laboratório.
+- **Guardião Blindado:** soldado protegido por uma armadura.
 
-### 4.2 Fase 2 – Interior da torre
+### Fase 3 – Confronto final
 
-**Missão:** avançar pelo interior da torre e superar criaturas mais resistentes.
+**Missão:** enfrentar as últimas criaturas e derrotar o cientista.
 
-Monstros disponíveis:
-
-| Monstro | Vida | Ataque | Defesa |
-|---|---:|---:|---:|
-| Cientista Mutante | 40 | 9 | 5 |
-| Aranha Experimental | 40 | 10 | 4 |
-| Guardião Blindado | 60 | 11 | 8 |
-
-**Características:**
-- Cientista Mutante: assistente do Dr. Thomas que sofreu mutações.
-- Aranha Experimental: aranha gigante desenvolvida em laboratório.
-- Guardião Blindado: soldado protegido por uma armadura.
-
-### 4.3 Fase 3 – Confronto final
-
-**Missão:** entrar na parte final da torre, enfrentar as criaturas mais poderosas e derrotar o Dr. Thomas.
-
-Monstros disponíveis:
-
-| Monstro | Vida | Ataque | Defesa |
-|---|---:|---:|---:|
-| Quimera | 70 | 12 | 7 |
-| Golem de Soro | 80 | 12 | 8 |
-
-**Características:**
-- Quimera: criatura formada pela fusão de diferentes animais.
-- Golem de Soro: criatura formada por soro endurecido.
+- **Quimera:** fusão de vários animais.
+- **Golem de Soro:** criatura formada por soro endurecido.
 
 ### Chefe final – Dr. Thomas
 
-O Dr. Thomas é o responsável pela criação do soro e o principal antagonista do jogo.
+O responsável pela criação do soro e principal inimigo do jogo.
 
-| Atributo | Valor |
-|---|---:|
-| Vida | 100 |
-| Ataque | 15 |
-| Defesa | 10 |
+- **Vida:** 100
+- **Ataque:** 15
+- **Defesa:** 10
 
-O confronto contra o cientista representa o desafio final da aventura.
+## 5. Como funciona o jogo
 
----
+### Movimentação
 
-## 5. Dinâmica do jogo
+- O jogador utiliza um dado de 6 lados para avançar.
+- Cada fase possui um tabuleiro com 12 casas.
+- O objetivo é chegar ao final do percurso.
 
-### 5.1 Movimentação
+### Tipos de casas
 
-A movimentação acontece por meio de um dado virtual de seis lados.
+- **Vazia:** nada acontece.
+- **Combate:** aparece um monstro.
+- **Cura:** recupera 20 pontos de vida.
+- **Tesouro:** ganha 10 pontos de experiência.
+- **Armadilha:** perde 15 pontos de vida.
+- **Fim:** última posição do tabuleiro.
 
-- O jogador inicia na posição 0 do tabuleiro.
-- Para movimentar o personagem, deve digitar `1`.
-- O sistema sorteia um número entre 1 e 6.
-- O resultado determina quantas casas o personagem avança.
-- Caso ultrapasse a última posição, o personagem permanece na casa 11.
+### Combate
 
-Cada fase utiliza um tabuleiro com 12 posições, numeradas de 0 a 11.
+Durante as batalhas, o jogador pode escolher:
 
-### 5.2 Tipos de casas
+1. Atacar.
+2. Defender.
+3. Usar habilidade especial.
+4. Fugir.
 
-O tabuleiro possui cinco tipos de eventos:
+O dano do jogador é calculado por:
 
-| Tipo de casa | Funcionamento |
-|---|---|
-| Vazia | Nenhum evento acontece. |
-| Combate | O jogador enfrenta um monstro aleatório da fase atual. |
-| Cura | O personagem recupera 20 pontos de vida. |
-| Tesouro | O jogador recebe 10 pontos de experiência (XP). |
-| Armadilha | O personagem perde 15 pontos de vida. |
-| Fim | Representa a última posição do tabuleiro. |
+`Dano = D20 + Força - Defesa do monstro`
 
-A distribuição das casas é definida previamente no vetor `tabuleiro`.
-
-### 5.3 Sistema de combate
-
-O combate acontece por turnos. Quando encontra um monstro, o jogador pode escolher uma das quatro ações:
-
-1. **Atacar:** realiza um ataque normal.
-2. **Defender:** reduz pela metade o próximo dano recebido.
-3. **Habilidade:** utiliza a habilidade especial do personagem.
-4. **Fugir:** tenta escapar do combate por meio de um dado.
-
-O combate continua enquanto o jogador e o monstro possuírem pontos de vida.
-
-### 5.4 Fórmulas de ataque e dano
-
-O dano do jogador em um ataque normal é calculado pela fórmula:
-
-`Dano = D20 + Força do jogador - Defesa do monstro`
-
-O valor mínimo de dano é 1.
-
-O D20 utilizado no jogo é um número aleatório entre 1 e 20.
-
-**Dano das habilidades especiais:**
-
-- **Soldado:** D20 + Força + 10 - Defesa do monstro.
-- **General:** recupera 30 pontos de vida, limitado à vida máxima.
-- **Agente:** (D20 + Força - Defesa do monstro) × 2.
-
-No caso do Agente, o dano mínimo da habilidade especial é 2.
-
-**Dano causado pelo monstro:**
+O dano dos monstros é calculado por:
 
 `Dano = D20 + Ataque do monstro - Defesa do jogador`
 
-O dano mínimo é 1.
+O D20 representa um número aleatório entre 1 e 20.
 
-Quando o jogador escolhe defender, o dano recebido do monstro é dividido por 2.
+Ao defender, o jogador recebe metade do dano do próximo ataque inimigo.
 
-### 5.5 Sistema de fuga
+### Sistema de fuga
 
-Para fugir de um combate, o jogador precisa lançar um dado de seis lados.
+Para fugir, o jogador precisa lançar um dado de seis lados:
 
-- Resultado igual ou superior a 4: fuga bem-sucedida.
-- Resultado inferior a 4: a fuga falha e o monstro pode atacar.
+- Resultado igual ou superior a 4: consegue fugir.
+- Resultado inferior a 4: a fuga falha.
 
-### 5.6 Recompensas
+### Vitória e derrota
 
-Durante a aventura, o jogador pode encontrar:
+- **Vitória:** derrotar o Dr. Thomas e salvar a humanidade.
+- **Derrota:** perder todos os pontos de vida.
 
-- **Kit médico:** recupera 20 pontos de vida.
-- **Tesouro:** concede 10 pontos de experiência.
-- **Vitória em combate:** permite continuar a aventura sem a ameaça daquele monstro.
-
-Os pontos de experiência são armazenados no personagem, mas o sistema de evolução de nível ainda não está implementado.
-
-### 5.7 Condições de vitória e derrota
-
-**Vitória:**
-- Avançar pelas três fases.
-- Chegar ao confronto contra o Dr. Thomas.
-- Derrotar o chefe final para concluir a missão de salvar a humanidade.
-
-**Derrota:**
-- O personagem perde todos os seus pontos de vida.
-- Quando a vida chega a zero, o jogo apresenta a mensagem `Game-over!`.
-
----
-
-## 6. Tutorial de compilação e execução
-
-O jogo foi desenvolvido na linguagem C e utiliza bibliotecas padrão, como `stdio.h`, `stdlib.h`, `time.h` e `string.h`.
-
-### 6.1 Pré-requisitos
-
-Para compilar e executar o jogo, é necessário possuir:
-
-- Um compilador C, como o GCC.
-- Um terminal ou prompt de comando.
-- O arquivo `main.c`.
-
-### 6.2 Linux
-
-**1. Verificar se o GCC está instalado:**
-
-```bash
-gcc --version
-```
-
-Caso não esteja instalado, em distribuições Ubuntu ou Debian, execute:
-
-```bash
-sudo apt update
-sudo apt install build-essential
-```
-
-**2. Acessar a pasta do projeto:**
-
-```bash
-cd caminho/da/pasta
-```
-
-**3. Compilar o jogo:**
-
-```bash
-gcc main.c -o jogo
-```
-
-**4. Executar:**
-
-```bash
-./jogo
-```
-
-### 6.3 Windows
-
-Com o GCC instalado por meio do MinGW-w64 ou MSYS2:
-
-**1. Abrir o terminal na pasta do projeto.**
-
-**2. Compilar:**
-
-```bash
-gcc main.c -o jogo.exe
-```
-
-**3. Executar:**
-
-```bash
-.\jogo.exe
-```
-
-**Observação:** a função responsável por limpar a tela utiliza o comando `clear`, próprio de ambientes Linux/macOS. Para execução adequada no Windows, é necessário adaptar essa função para utilizar `cls` no Windows.
-
-### 6.4 macOS
-
-Com o compilador Clang instalado pelas ferramentas de linha de comando do Xcode:
-
-**1. Compilar:**
-
-```bash
-clang main.c -o jogo
-```
-
-**2. Executar:**
-
-```bash
-./jogo
-```
-
----
+## 6. Como executar o jogo
+**Como Compilar e Jogar**
+-Instale o gcc ( ‘ sudo apt install build - essential ‘)
+-Compile : ‘ gcc - Wall - Wextra -o jogo src / main . c - lm ‘
+-Execute : ‘ ./ jogo ‘
 
 ## 7. Estrutura do código
 
-O código foi organizado em estruturas, enumerações e funções para facilitar a organização e o funcionamento do jogo.
+O projeto utiliza os seguintes elementos:
 
-### 7.1 Bibliotecas utilizadas
+### Structs
 
-| Biblioteca | Finalidade |
-|---|---|
-| `stdio.h` | Entrada e saída de dados, utilizando `printf` e `scanf`. |
-| `stdlib.h` | Geração de números aleatórios e execução de comandos do sistema. |
-| `time.h` | Inicialização da geração aleatória com base no horário. |
-| `string.h` | Manipulação de textos, utilizando `strcpy`. |
+- **Personagem:** armazena os dados dos personagens.
+- **Monstro:** armazena os dados dos inimigos.
 
-### 7.2 Enumerações
+### Enums
 
-**Classe**
+- **Classe:** define as classes dos personagens.
+- **casas:** define os tipos de casas do tabuleiro.
 
-Define as três classes disponíveis para o jogador:
+### Principais funções
 
-- `SOLDADO`
-- `GENERAL`
-- `AGENTE`
-
-**casas**
-
-Define os tipos de posições existentes no tabuleiro:
-
-- `VAZIA`
-- `COMBATE`
-- `CURA`
-- `TESOURO`
-- `ARMADILHA`
-- `FIM`
-
-### 7.3 Estruturas (struct)
-
-**Personagem**
-
-Armazena as informações do personagem escolhido:
-
-- Nome;
-- Classe;
-- Vida atual e vida máxima;
-- Força;
-- Defesa;
-- Agilidade;
-- Inteligência;
-- Experiência (XP);
-- Nível.
-
-**Monstro**
-
-Armazena as informações dos inimigos:
-
-- Nome;
-- Descrição;
-- Vida;
-- Ataque;
-- Defesa.
-
-### 7.4 Principais variáveis globais
-
-**tabuleiro[12]**
-
-Vetor global que armazena a sequência de casas percorridas pelo jogador durante as fases.
-
-### 7.5 Principais funções
-
-| Função | Responsabilidade |
-|---|---|
-| `limpartela()` | Limpa a tela do terminal. |
-| `lancar_dados()` | Gera um número aleatório entre 1 e 6. |
-| `dado_dano()` | Gera um número aleatório entre 1 e 20 para os cálculos de dano. |
-| `criarPersonagem()` | Inicializa os atributos do personagem escolhido. |
-| `andar()` | Atualiza a posição do jogador no tabuleiro. |
-| `monstrosFase1()` | Define os monstros da primeira fase. |
-| `monstrosFase2()` | Define os monstros da segunda fase. |
-| `monstrosFase3()` | Define os monstros da terceira fase. |
-| `criar_monstro()` | Seleciona e inicializa um monstro de acordo com a fase. |
-| `criardoutor()` | Inicializa os atributos do chefe final. |
-| `combate()` | Controla o sistema de combate entre personagem e monstro. |
-| `combatefinal()` | Executa o confronto contra o Dr. Thomas. |
-| `evento_casa()` | Identifica e executa o evento da casa em que o jogador caiu. |
-| `primeira_fase()` | Controla a primeira etapa da aventura. |
-| `segunda_fase()` | Controla a segunda etapa da aventura. |
-| `terceira_fase()` | Controla a terceira etapa da aventura e o confronto final. |
-| `descricao_personagens()` | Exibe as características dos personagens disponíveis. |
-| `Escolher_personagem()` | Permite selecionar a classe do jogador. |
-| `MensagemInicial()` | Apresenta a história e inicia a aventura. |
-| `main()` | Inicializa o jogo e controla o fluxo principal da execução. |
-
----
+- `criarPersonagem()`: cria o personagem escolhido.
+- `lancar_dados()`: realiza a movimentação.
+- `criar_monstro()`: define os inimigos de cada fase.
+- `combate()`: controla as batalhas.
+- `evento_casa()`: executa os eventos do tabuleiro.
+- `primeira_fase()`, `segunda_fase()` e `terceira_fase()`: controlam as fases.
+- `main()`: inicia e controla o jogo.
 
 ## 8. Considerações finais
 
-O projeto tem como objetivo desenvolver um jogo de RPG em linguagem C, aplicando conceitos fundamentais de programação, como estruturas de dados, enumerações, funções, estruturas condicionais, laços de repetição, ponteiros e geração de números aleatórios.
-
-A organização do jogo em personagens, monstros, fases e eventos permite trabalhar diferentes conceitos de lógica de programação em uma aplicação interativa.
-
-O jogador precisa tomar decisões estratégicas durante os combates e administrar seus pontos de vida para conseguir chegar ao desafio final: derrotar o Dr. Thomas e salvar a humanidade.
+O projeto foi desenvolvido com a linguagem C, utilizando conceitos de programação como structs, enums, funções, vetores, ponteiros, condicionais e estruturas de repetição.
