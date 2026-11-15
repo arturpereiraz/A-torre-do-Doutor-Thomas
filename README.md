@@ -20,9 +20,6 @@ O jogo possui três fases e um chefe final.
 O jogador pode escolher entre três personagens, cada um com características e habilidades especiais.
 
 ### Patrick – Soldado
-
-Especialista em combate direto e força física.
-
 - **Vida:** 120
 - **Força:** 15
 - **Defesa:** 10
@@ -32,9 +29,6 @@ Especialista em combate direto e força física.
 - **Habilidade especial:** Rajada Pesada, adiciona 10 pontos de dano ao ataque.
 
 ### Red Jhon – General
-
-Personagem estratégico, com alta defesa e inteligência.
-
 - **Vida:** 100
 - **Força:** 9
 - **Defesa:** 13
@@ -42,11 +36,8 @@ Personagem estratégico, com alta defesa e inteligência.
 - **Inteligência:** 14
 - **Equipamento:** Pistola Tática.
 - **Habilidade especial:** Ordem de Recuo, recupera 30 pontos de vida.
-
+- 
 ### Lisbon – Agente
-
-Personagem ágil, especializado em ataques rápidos.
-
 - **Vida:** 110
 - **Força:** 12
 - **Defesa:** 11
@@ -80,7 +71,7 @@ Personagem ágil, especializado em ataques rápidos.
 - **Quimera:** fusão de vários animais.
 - **Golem de Soro:** criatura formada por soro endurecido.
 
-### Chefe final – Dr. Thomas
+### Final – Dr. Thomas
 
 O responsável pela criação do soro e principal inimigo do jogo.
 
@@ -135,7 +126,7 @@ Para fugir, o jogador precisa lançar um dado de seis lados:
 
 ### Vitória e derrota
 
-- **Vitória:** derrotar o Dr. Thomas e salvar a humanidade.
+- **Vitória:** derrotar o Dr. Thomas.
 - **Derrota:** perder todos os pontos de vida.
 
 ## 6. Como executar o jogo
@@ -170,4 +161,4 @@ O projeto utiliza os seguintes elementos:
 
 ## 8. Considerações finais
 
-O projeto foi desenvolvido com a linguagem C, utilizando conceitos de programação como structs, enums, funções, vetores, ponteiros, condicionais e estruturas de repetição.
+O projeto foi desenvolvido com a linguagem C, utilizando structs, enums, funções, vetores, ponteiros, condicionais e estruturas de repetição.
