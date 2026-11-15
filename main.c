@@ -296,11 +296,8 @@ int combate(Personagem *p, Monstro *m){
 int combatefinal(Personagem *p){
   Monstro m;
   criardoutor(&m);
-  int jogada=combate(p,&m);
-  if (jogada ==1){
-    return 1;
-  }
-  
+  int jogada = combate(p, &m);
+  return jogada;
 }
 
 
@@ -454,7 +451,7 @@ void descricao_personagens(){
   limpartela();
   printf("--SOLDADO|0--\n");
   printf("Vida Máxima:120\n");
-  printf("Força:14 \n");
+  printf("Força:15 \n");
   printf("Defesa:10\n");
   printf("Agilidade:8\n");
   printf("Inteligência:6\n");
@@ -468,12 +465,12 @@ void descricao_personagens(){
   printf("Agilidade:6\n");
   printf("Inteligência:14\n");
   printf("Equipamento:Pistola Tática\n");
-  printf("Habilidade Especial:Ordem de Recuo (cura 30%% da vida máxima)\n");
+  printf("Habilidade Especial:Ordem de Recuo (cura 30+ da vida máxima)\n");
   printf(" ");
   printf("--AGENTE|2--\n");
-  printf("Vida Máxima:95\n");
-  printf("Força:11 \n");
-  printf("Defesa:9\n");
+  printf("Vida Máxima:110\n");
+  printf("Força:12 \n");
+  printf("Defesa:11\n");
   printf("Agilidade:14\n");
   printf("Inteligência:12\n");
   printf("Equipamento:Pistola Silenciada\n");
@@ -486,24 +483,30 @@ int Escolher_personagem(){
   printf("Antes de começar nossa missão, escolha um personagem para jogo\n");
   descricao_personagens();
   do{
-    printf("Digite o número do personagem:(0,1,2, 3-sair)\n");
-    scanf("%d",&escolha);
-    switch (escolha){
+    printf("Digite o número do personagem (0, 1, 2, 3-sair):\n");
+    scanf("%d", &escolha);
+    switch(escolha){
       case SOLDADO:
         return 0;
+          
       case GENERAL:
         return 1;
+
       case AGENTE:
         return 2;
-      case 3:
-        break;
-      default:
-        printf("opção inválida");
-        break;
-    }
-  }while(escolha!=3);
 
+      case 3:
+        return -1;
+
+      default:
+        printf("Opção inválida!\n");
+        break;
+        }
+
+    }while(escolha != 3);
+    return -1;
 }
+
 int MensagemInicial(){
   int comando;
   printf("Seja Bem-vindo(a) a essa grande aventura!\n"
@@ -544,12 +547,8 @@ int main(){
       }
       
   }
+  }
   else{
     printf("Você deixou o Dr.Thomas dominar o mundo");
   }
-  
-
-
-}
-
 }
