@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <unistd.h> // Necessário para a função sleep()
 
 void limpartela(){
   system("clear");
@@ -101,8 +102,6 @@ void criarPersonagem(Personagem *p,Classe classe){
       p->vida = p->vidaMax;
       break;
   }
-
-  
 }
 
 
@@ -111,8 +110,8 @@ void andar(int *posicao,int dado){
   if(*posicao>11){
     *posicao=11;
   }
-
 }
+
 void monstrosFase1(Monstro *m, int numero){
   if (numero == 0){
     strcpy(m->nome, "Zumbi Mutante");
@@ -120,7 +119,6 @@ void monstrosFase1(Monstro *m, int numero){
     m->vida = 20;
     m->ataque = 6;
     m->defesa = 3;
- 
   }
   else if (numero == 1){
     strcpy(m->nome, "Cão Infectado");
@@ -177,7 +175,6 @@ void monstrosFase3(Monstro *m, int numero){
     m->ataque = 12;
     m->defesa = 8;
   }
-  
 } 
 
 void criar_monstro(Monstro*m,int fase,int numero){
@@ -198,7 +195,7 @@ void criardoutor(Monstro *d){
   d->vida = 100;
   d->ataque = 15;
   d->defesa = 10;
-}  
+}   
 
 int combate(Personagem *p, Monstro *m){
   int acao,dano;
@@ -208,7 +205,6 @@ int combate(Personagem *p, Monstro *m){
   printf("%s\n",m->descricao);
   
   while(p->vida > 0 && m->vida > 0){
-  
     printf("\nSua vida: %d | Vida do monstro: %d\n", p->vida, m->vida);
     printf("[1] Atacar  [2] Defender  [3] Habilidade  [4] Fugir\n");
     printf("Escolha: ");
@@ -257,6 +253,7 @@ int combate(Personagem *p, Monstro *m){
     else if (acao == 4){
       printf("Você precisa jogar um dado e tirar 4 ou +\n");
       printf("Digite enter para jogar dado:\n");
+      while (getchar() != '\n'); 
       getchar();
       int jogada= lancar_dados();
       if (jogada>= 4){
@@ -333,15 +330,16 @@ void evento_casa(Personagem *p, casas posicao,int fase){
       break;
   }
 }
+
 int primeira_fase(Personagem *p){
   int posicao=0;
   printf("---FASE 1---\n"
   "Sua primeira missão é chegar na Torre do Dr.Thomas\n"
   );
   
-  while (posicao<11 &&  p->vida>0){ 
+  while (posicao<11 &&  p->vida>0){  
     int comando;
-    printf("Você estar na casa %d\n",posicao);
+    printf("Você está na casa %d\n",posicao);
     printf("Digite 1 para lançar o dado:\n");
     scanf("%d",&comando);
     
@@ -352,34 +350,33 @@ int primeira_fase(Personagem *p){
       andar(&posicao,dado);
       
       evento_casa(p,tabuleiro[posicao],1);
-
     }
     else{
-      printf("Opção inválida");
+      printf("Opção inválida\n");
     }
-  
   } 
- if (p->vida<=0){
-  printf("Game-over!\n");
-  return 0;
- }
- else{
-  printf("FASE UM CONCLUÌDA!\n");
-  return 1;
- }
 
-  
+  if (p->vida<=0){
+    printf("Game-over!\n");
+    return 0;
+  }
+  else{
+    printf("\nFASE UM CONCLUÍDA!\n");
+    sleep(3); // Pausa de 3 segundos
+    limpartela(); 
+    return 1;
+  }
 }
 
 int segunda_fase(Personagem *p){
   int posicao=0;
   printf("---FASE 2---\n"
-  "Você chegou no téreo da Torre do Dr.Thomas\n"
+  "Você chegou no térreo da Torre do Dr.Thomas\n"
   );
   
-  while (posicao<11 &&  p->vida>0){ 
+  while (posicao<11 &&  p->vida>0){  
     int comando;
-    printf("Você estar na casa %d\n",posicao);
+    printf("Você está na casa %d\n",posicao);
     printf("Digite 1 para lançar o dado:\n");
     scanf("%d",&comando);
     
@@ -390,21 +387,22 @@ int segunda_fase(Personagem *p){
       andar(&posicao,dado);
       
       evento_casa(p,tabuleiro[posicao],2);
-
     }
     else{
-      printf("Opção inválida");
+      printf("Opção inválida\n");
     }
-  
   } 
- if (p->vida<=0){
-  printf("Game-over!\n");
-  return 0;
- }
- else{
-  printf("FASE DOIS CONCLUÌDA!\n");
-  return 1;
- }
+
+  if (p->vida<=0){
+    printf("Game-over!\n");
+    return 0;
+  }
+  else{
+    printf("\nFASE DOIS CONCLUÍDA!\n");
+    sleep(3); // Pausa de 3 segundos
+    limpartela(); 
+    return 1;
+  }
 }
 
 int terceira_fase(Personagem *p){
@@ -413,9 +411,9 @@ int terceira_fase(Personagem *p){
   "Você entrou na Torre do Dr.Thomas. Encontre ele e salve o mundo!\n"
   );
   
-  while (posicao<11 &&  p->vida>0){ 
+  while (posicao<11 &&  p->vida>0){  
     int comando;
-    printf("Você estar na casa %d\n",posicao);
+    printf("Você está na casa %d\n",posicao);
     printf("Digite 1 para lançar o dado:\n");
     scanf("%d",&comando);
     
@@ -428,23 +426,21 @@ int terceira_fase(Personagem *p){
         printf("Chegou a hora de enfrentar o doutor Thomas e salvar o mundo\n");
         int progresso=combatefinal(p);
         if (progresso==1){
-          printf("Você salvou o mundo das mãos do Doutor Thomas");
+          printf("Você salvou o mundo das mãos do Doutor Thomas\n");
         }
       }
       evento_casa(p,tabuleiro[posicao],3);
-
     }
     else{
-      printf("Opção inválida");
+      printf("Opção inválida\n");
     }
-  
   } 
- if (p->vida<=0){
-  printf("Game-over!\n");
-  return 0;
- }
- }
 
+  if (p->vida<=0){
+    printf("Game-over!\n");
+    return 0;
+  }
+}
 
 //FUNÇÕES INTERATIVAS
 void descricao_personagens(){
@@ -456,8 +452,8 @@ void descricao_personagens(){
   printf("Agilidade:8\n");
   printf("Inteligência:6\n");
   printf("Equipamento:Fuzil\n");
-  printf("Habilidade Especial:Rajada Pesada (+10 de dano)\n");
-  printf(" ");
+  printf("Habilidade Especial:Rajada Pesada (+10 de dano)\n\n");
+  
   printf("--GENERAL|1--\n");
   printf("Vida Máxima:100\n");
   printf("Força:9\n");
@@ -465,8 +461,8 @@ void descricao_personagens(){
   printf("Agilidade:6\n");
   printf("Inteligência:14\n");
   printf("Equipamento:Pistola Tática\n");
-  printf("Habilidade Especial:Ordem de Recuo (cura 30+ da vida máxima)\n");
-  printf(" ");
+  printf("Habilidade Especial:Ordem de Recuo (cura 30+ da vida máxima)\n\n");
+  
   printf("--AGENTE|2--\n");
   printf("Vida Máxima:110\n");
   printf("Força:12 \n");
@@ -483,7 +479,7 @@ int Escolher_personagem(){
   printf("Antes de começar nossa missão, escolha um personagem para jogo\n");
   descricao_personagens();
   do{
-    printf("Digite o número do personagem (0, 1, 2, 3-sair):\n");
+    printf("\nDigite o número do personagem (0: Soldado, 1: General, 2: Agente, 3-sair):\n");
     scanf("%d", &escolha);
     switch(escolha){
       case SOLDADO:
@@ -502,7 +498,6 @@ int Escolher_personagem(){
         printf("Opção inválida!\n");
         break;
         }
-
     }while(escolha != 3);
     return -1;
 }
@@ -510,13 +505,13 @@ int Escolher_personagem(){
 int MensagemInicial(){
   int comando;
   printf("Seja Bem-vindo(a) a essa grande aventura!\n"
-         "Você agora tem a grande missão de salvar a humanidade das mãos dos Doutor Thomas\n"
-         "Em um dos seus experimentos ele criou um soro que pontencializa todas as capacidades humanas\n"
-         "Porém...Isso saiu do seu controle e criou monstros\n"
-         "Você precisa invadir a torre do doutor,dete-lô e gaseficar o antídoto para salvar a população\n"
+         "Você agora tem a grande missão de salvar a humanidade das mãos do Dr. Thomas\n"
+         "Em um dos seus experimentos ele criou um soro que potencializa todas as capacidades humanas\n"
+         "Porém... Isso saiu do seu controle e criou monstros\n"
+         "Você precisa invadir a torre do doutor, detê-lo e gaseificar o antídoto para salvar a população\n"
   );
   
-  printf("Digite '1' para começar:");
+  printf("\nDigite '1' para começar: ");
   scanf("%d",&comando);
   
   if (comando==1){
@@ -535,6 +530,10 @@ int main(){
   
   if (comecar==1){
       int escolha=Escolher_personagem();
+      if(escolha == -1) {
+          printf("Você desistiu do jogo.\n");
+          return 0;
+      }
       Personagem heroi;
       criarPersonagem(&heroi,escolha);
       limpartela();
@@ -543,12 +542,11 @@ int main(){
           progresso+=segunda_fase(&heroi);
           if (progresso==2){
             progresso+=terceira_fase(&heroi);
-          
+          }
       }
-      
-  }
   }
   else{
-    printf("Você deixou o Dr.Thomas dominar o mundo");
+    printf("Você deixou o Dr. Thomas dominar o mundo\n");
   }
+  return 0;
 }
