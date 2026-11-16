@@ -159,6 +159,9 @@ O projeto utiliza os seguintes elementos:
 - `primeira_fase()`, `segunda_fase()` e `terceira_fase()`: controlam as fases.
 - `main()`: inicia e controla o jogo.
 
+## 9. GamePlay
+**Link:**
+
 ## 8. Considerações finais
 
 O projeto foi desenvolvido com a linguagem C, utilizando structs, enums, funções, vetores, ponteiros, condicionais e estruturas de repetição.
