@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include <unistd.h> // Necessário para a função sleep()
+#include <unistd.h>
 
 void limpartela(){
   system("clear");
@@ -79,7 +79,7 @@ void criarPersonagem(Personagem *p,Classe classe){
       p->defesa = 10;
       p->agilidade = 8;
       p->inteligencia = 6;
-      p->vida = p->vidaMax;
+        p->vida = p->vidaMax;
       break;
 
     case GENERAL:
