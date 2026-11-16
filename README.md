@@ -160,7 +160,7 @@ O projeto utiliza os seguintes elementos:
 - `main()`: inicia e controla o jogo.
 
 ## 9. GamePlay
-**Link:**
+**Link:**https://youtu.be/V1wOoWX2d6o
 
 ## 8. Considerações finais
 
