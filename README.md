@@ -3,7 +3,7 @@
 ## 1. Identificação
 
 - **Aluno:** Artur Pereira Lino
-- **Matrícula:** [Sua matrícula]
+- **Matrícula:** 20260010534
 - **Linguagem:** C
 - **Gênero:** RPG de aventura e combate.
 
